@@ -12,15 +12,15 @@ const LocationSelections = () => {
 
   const fetchCountries = async () => {
     const country = await fetchCountry();
-    setCountry(country);
+    setCountry(country || []);
   };
   const fetchStates = async (country) => {
     const state = await fetchState(country);
-    setState(state);
+    setState(state || []);
   };
   const fetchCities = async (country, state) => {
     const city = await fetchCity(country, state);
-    setCity(city);
+    setCity(city || []);
   };
 
   useEffect(() => {
